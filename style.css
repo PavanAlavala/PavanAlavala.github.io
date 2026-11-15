@@ -1,0 +1,250 @@
+/*
+  style.css = how the website LOOKS.
+  Format:  selector { property: value; }
+  The selector picks WHAT to style, the properties say HOW.
+*/
+
+/* ===== COLOR VARIABLES =====
+   Define colors once here, use them everywhere with var(--name).
+   Change a value here and the whole site updates. */
+:root {
+  --bg: #0b0f17;          /* page background */
+  --surface: #121826;     /* cards and boxes */
+  --border: #1f2937;      /* thin lines */
+  --text: #e5e7eb;        /* main text */
+  --muted: #9ca3af;       /* softer text */
+  --accent: #22d3ee;      /* the techy cyan highlight */
+}
+
+/* Apply to every element: include padding/border in the width (easier layouts) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;  /* nav links glide instead of jumping */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Reusable helper classes */
+.mono { font-family: "JetBrains Mono", monospace; }
+.accent { color: var(--accent); }
+
+code {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--border);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: sticky;   /* stays at the top while scrolling */
+  top: 0;
+  z-index: 10;
+  display: flex;      /* puts logo and links in one row */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(11, 15, 23, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+}
+.nav-links a {
+  color: var(--muted);
+  margin-left: 1.25rem;
+  font-size: 0.95rem;
+}
+.nav-links a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ===== LAYOUT ===== */
+main {
+  max-width: 960px;   /* keeps text from stretching too wide */
+  margin: 0 auto;     /* centers the page */
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 5rem 0 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+section > p {
+  color: var(--muted);
+  max-width: 680px;
+  margin-bottom: 1rem;
+}
+strong { color: var(--text); }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 85vh;   /* 85% of the screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);  /* shrinks on phones, grows on desktops */
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0.5rem 0 1rem;
+}
+.tagline {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.intro {
+  color: var(--muted);
+  max-width: 600px;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: rgba(34, 211, 238, 0.1);
+  text-decoration: none;
+}
+.btn.primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+.btn.primary:hover {
+  background: #67e8f9;
+}
+
+/* ===== SKILLS ===== */
+.skills-grid {
+  display: grid;
+  /* as many columns as fit, each at least 220px wide */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+.skill-group h3 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.skill-group ul {
+  list-style: none;
+}
+.skill-group li::before {
+  content: "▹ ";
+  color: var(--accent);
+}
+
+/* ===== PROJECTS ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);   /* card lifts slightly on hover */
+  border-color: var(--accent);
+}
+.card-label {
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.card h3 {
+  font-size: 1.3rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.card > p:not(.card-label) {   /* only the description, not the small label */
+  color: var(--muted);
+  font-size: 0.95rem;
+  flex-grow: 1;   /* pushes tags and link to the bottom so cards line up */
+}
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.tags li {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ===== PHONES =====
+   Rules inside here only apply when the screen is 600px wide or less. */
+@media (max-width: 600px) {
+  .nav-links a {
+    margin-left: 0.75rem;
+    font-size: 0.85rem;
+  }
+  section {
+    padding-top: 3.5rem;
+  }
+}

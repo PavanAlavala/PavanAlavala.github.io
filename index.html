@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+  index.html = the STRUCTURE of the website (what's on the page).
+  style.css  = the LOOK of the website (colors, fonts, spacing).
+  GitHub Pages automatically serves a file named index.html as the home page.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the site fit phone screens properly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Kumar Reddy Alavala | AI Engineer</title>
+  <meta name="description" content="Portfolio of Pavan Kumar Reddy Alavala, MS Computer Science, building towards AI engineering.">
+  <!-- Fonts from Google Fonts: one for text, one "code" font for the techy look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Connects our design file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <!-- Each link jumps to the section with the matching id, e.g. href="#about" goes to id="about" -->
+  <nav class="nav">
+    <a href="#home" class="logo">&lt;Pavan /&gt;</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===== HERO: the first thing people see ===== -->
+    <section id="home" class="hero">
+      <p class="mono accent">$ whoami</p>
+      <h1>Pavan Kumar Reddy Alavala</h1>
+      <p class="tagline">MS Computer Science &middot; Building towards <span class="accent">AI Engineering</span></p>
+      <p class="intro">I learn by building. Right now I'm building AI agents, Python backends, and the tools around them, one small working project at a time.</p>
+      <div class="buttons">
+        <a href="#projects" class="btn primary">See my projects</a>
+        <a href="https://github.com/PavanAlavala" class="btn" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <h2><span class="mono accent">01.</span> About me</h2>
+      <p>I have a Master's degree in Computer Science, and my goal is to become an <strong>AI engineer</strong>: someone who can build reliable, useful systems with AI, not just use them.</p>
+      <p>My approach: pick a small problem, build something that works, understand every line, then make it better. This website is part of that journey.</p>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills">
+      <h2><span class="mono accent">02.</span> Skills</h2>
+      <!-- Each "skill-group" is one box. To add a skill, copy a <li> line and change the text. -->
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>AI &amp; Agents</h3>
+          <ul>
+            <li>LLM APIs (Gemini)</li>
+            <li>Tool-calling agents</li>
+            <li>Prompting</li>
+            <li>Claude Code</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul>
+            <li>Python</li>
+            <li>HTML &amp; CSS</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Backend &amp; Tools</h3>
+          <ul>
+            <li>Flask</li>
+            <li>REST APIs</li>
+            <li>Docker</li>
+            <li>Git &amp; GitHub</li>
+            <li>Command line</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+      <h2><span class="mono accent">03.</span> Projects</h2>
+      <!-- Each <article class="card"> is one project. To add a new project, copy a whole card and edit it. -->
+      <div class="projects-grid">
+
+        <article class="card">
+          <p class="mono card-label">AI Agent</p>
+          <h3>My Agent</h3>
+          <p>An AI agent built from scratch in Python. It reads a command, picks the right tool from a toolbox, and runs it: math, saving and reading notes, and fetching live weather from the Open-Meteo API. Also experiments with the Gemini API, falling back to another model when one is busy.</p>
+          <ul class="tags">
+            <li>Python</li><li>Gemini API</li><li>REST APIs</li><li>Tool calling</li>
+          </ul>
+          <a href="https://github.com/PavanAlavala/my-agent" target="_blank" rel="noopener">View code &rarr;</a>
+        </article>
+
+        <article class="card">
+          <p class="mono card-label">Backend</p>
+          <h3>User Service</h3>
+          <p>A small Python web service built with Flask, with a <code>/health</code> endpoint that reports whether the service is running. It's packaged with Docker so it runs the same way on any machine, and it has automated tests.</p>
+          <ul class="tags">
+            <li>Python</li><li>Flask</li><li>Docker</li><li>Testing</li>
+          </ul>
+          <a href="https://github.com/PavanAlavala/user-service" target="_blank" rel="noopener">View code &rarr;</a>
+        </article>
+
+        <article class="card">
+          <p class="mono card-label">Web</p>
+          <h3>This Portfolio</h3>
+          <p>The site you're looking at. Hand-written HTML and CSS with a responsive dark theme, hosted for free on GitHub Pages.</p>
+          <ul class="tags">
+            <li>HTML</li><li>CSS</li><li>GitHub Pages</li>
+          </ul>
+          <a href="https://github.com/PavanAlavala/PavanAlavala.github.io" target="_blank" rel="noopener">View code &rarr;</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact">
+      <h2><span class="mono accent">04.</span> Get in touch</h2>
+      <p>I'm open to opportunities and to learning from people who build things. The best way to reach me:</p>
+      <div class="buttons">
+        <a href="https://github.com/PavanAlavala" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+        <!-- TODO: add your LinkedIn link here, for example:
+        <a href="https://www.linkedin.com/in/YOUR-NAME" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="mono">Built by Pavan &middot; Hosted on GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
